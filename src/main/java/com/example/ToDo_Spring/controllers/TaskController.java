@@ -13,7 +13,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/tb_tasks")
 @Validated
 public class TaskController {
 

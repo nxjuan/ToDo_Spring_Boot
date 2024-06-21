@@ -33,12 +33,12 @@ public class TaskService {
     }
 
     @Transactional
-    public Tasks create(Tasks obj){
-        Users user = this.userService.findById(obj.getUser().getId());
-        obj.setId(null);
-        obj.setUser(user);
-        obj = this.taskRepository.save(obj);
-        return obj;
+    public Tasks create(Tasks task){
+        Users user = this.userService.findById(task.getUser().getId());
+        task.setId(null);
+        task.setUser(user);
+        task = this.taskRepository.save(task);
+        return task;
     }
 
     @Transactional

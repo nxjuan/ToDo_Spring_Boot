@@ -21,12 +21,10 @@ public class Tasks {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "users_id", nullable = false, updatable = false)
+    @JoinColumn(name = "user", nullable = false, updatable = false)
     private Users user;
 
     @Column(name = "description", length = 255, nullable = false)
-    @NotNull
-    @NotEmpty
     @Size(min = 1, max = 255)
     private String description;
 }

@@ -31,23 +31,17 @@ public class Users implements Serializable {
     @Column(name = "id", unique = true)
     private Long id;
 
-    @Column(name = "username", length = 100, nullable = false, unique = true)
-    @NotNull(groups = CreateUser.class)
-    @NotEmpty(groups = CreateUser.class)
-    @Size(groups = CreateUser.class, min = 2, max = 100)
+    @Column(name = "name", length = 100)
+    @Size(min = 2, max = 100)
     private String name;
 
     @Column(name = "email", length = 50, nullable = false, unique = true)
-    @NotNull(groups = CreateUser.class)
-    @NotEmpty(groups = CreateUser.class)
-    @Size(groups = CreateUser.class, min = 6, max = 100)
+    @Size(min = 6, max = 100)
     private String email;
 
 
     @Column(name = "password", length = 60, nullable = false)
-    @NotNull(groups = {CreateUser.class, UpdateUser.class})
-    @NotEmpty(groups = {CreateUser.class, UpdateUser.class})
-    @Size(groups = {CreateUser.class, UpdateUser.class}, min = 8, max = 60)
+    @Size(min = 8, max = 60)
     private String password;
 
     @OneToMany(mappedBy = "user")
